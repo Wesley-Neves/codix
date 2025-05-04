@@ -56,25 +56,26 @@ a:hover {
 }
 
 .btn-primary {
-    background-color: var(--secondary-color);
+    box-sizing: 5px;
+    background-color: var(--primary-color);
     color: white;
-    border: 2px solid var(--secondary-color);
+    border: 2px solid var(--primary-color);
 }
 
 .btn-primary:hover {
-    background-color: transparent;
+    background-color: #1f2b37;
     color: var(--secondary-color);
 }
 
 .btn-secondary {
-    background-color: transparent;
-    color: var(--secondary-color);
-    border: 2px solid var(--secondary-color);
+    background-color: var(--primary-color);
+    color: white;
+    border: 2px solid var(--primary-color);
 }
 
 .btn-secondary:hover {
-    background-color: var(--secondary-color);
-    color: white;
+    background-color: #1f2b37;
+    color: var(--secondary-color);
 }
 .container-header {
     display: flex;
@@ -348,6 +349,83 @@ nav ul li a.active {
     justify-content: center;
     gap: 1rem;
 }
+
+.content-logo{
+    display: flex;
+    align-items: center; /* alinha verticalmente */
+    justify-content: space-between; /* espaço entre os elementos */
+    flex-wrap: wrap; /* para melhor responsividade */
+    padding: 20px;
+  }
+
+  .about-image {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    margin-left: 20px;
+}
+  .home-content {
+    max-width: 600px;
+    position: relative;
+    justify-content: space-between;
+    background-size: cover;
+  background-position: center;
+  text-align: left;
+  background: url(images/logo.png) no-repeat;
+  }
+
+  .home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+  }
+  
+  .home-content h3:nth-of-type(2) {
+    margin-bottom: 30px;
+  }
+  .home-content h2 span {
+    color: #3498db;
+  }
+
+  .home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+  }
+
+  .home-content p {
+    font-size: 20px;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+  }
+
+  .home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #3498db;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #3498db;
+    text-decoration: none;
+    transition: .5s ease;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+    margin: 30px 15px 30px 0;
+  }
+
+  .home-content a:hover {
+    background: #3498db;
+    color: #081b29;
+    box-shadow: 0 0 20px #3498db;
+  }
+
 
 /* Features Section */
 .features {
@@ -695,7 +773,16 @@ nav ul li a.active {
         left: 0 !important;
         right: auto !important;
     }
+
+    .about-image {
+        display: none;
+    }
+
+    .home-content {
+        text-align: left;
+    }
 }
+
 
 @media (max-width: 768px) {
     .header .container {
@@ -760,6 +847,33 @@ nav ul li a.active {
     .hero-buttons .btn:last-child {
         margin-bottom: 0;
     }
+
+    .content-logo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-content {
+        text-align: center;
+    }
+
+    .home-content h1 {
+        font-size: 2rem;
+    }
+
+    .home-content h2,
+    .home-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .home-content p {
+        font-size: 1rem;
+    }
+
+    .about-image {
+        display: none;
+    }
 }
 
 /* Footer */
@@ -794,3 +908,4 @@ footer {
     color: #aaa;
     font-size: 0.9rem;
 }
+
